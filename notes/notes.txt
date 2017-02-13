@@ -1,0 +1,46 @@
+https://martinfowler.com/articles/serverless.html
+https://serverless.com/framework/
+
+== Servers
+=== Platform as a Service (PaaS)
+* The Cloud (aka "Someone Else's Server")
+* AWS
+* Slicehost
+
+
+== Services
+=== Container Hosting (Docker, et al - more services than servers)
+* Digital Ocean
+* Heroku
+
+=== Microservices
+* http://microservices.io
+
+=== Backend as a Service (BaaS)
+* Auth0
+** https://auth0.com/blog/what-is-serverless/
+** https://webtask.io/
+* Firebase
+* Youtube
+
+=== Function as a Service (FaaS)
+* AWS Lambda
+* Amazon Alexa
+* http://serverless.com
+
+
+
+
+
+
+
+
+== True Serverless (aka Peer-to-Peer)
+* Situational or Locational
+* git vs github
+* Discovery
+* UDP vs TCP
+* bluetooth (pairing)
+* webRTC
+* Apple Bonjour (fka Rendezvous)
+* DLNA / UPnP
