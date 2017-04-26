@@ -1,0 +1,17 @@
+{
+  "name": "serverless-architecture",
+  "homepage": "https://github.com/ThirstyHead/serverless-architecture",
+  "authors": [
+    "Scott Davis <scott@thirstyhead.com>"
+  ],
+  "description": "PRESENTATION: Practical Examples of Serverless Architecture",
+  "main": "index.html",
+  "license": "CC-BY-4.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
