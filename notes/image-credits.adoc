@@ -3,3 +3,9 @@ https://camo.githubusercontent.com/5501039f35df9b10562f395cd20cfb9123755ca1/6874
 
 aws marketshare
 https://www.channele2e.com/2017/02/09/cloud-market-share-2017-amazon-microsoft-ibm-google/
+
+tc aws lambda
+https://techcrunch.com/2015/11/24/aws-lamda-makes-serverless-applications-a-reality/
+
+getting started with lambda
+https://medium.com/@tombray/getting-started-with-aws-lambda-node-js-904bc0bfb83
