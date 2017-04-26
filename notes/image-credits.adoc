@@ -1,2 +1,5 @@
 serverless
 https://camo.githubusercontent.com/5501039f35df9b10562f395cd20cfb9123755ca1/687474703a2f2f6f6936362e74696e797069632e636f6d2f6a67676d36662e6a7067
+
+aws marketshare
+https://www.channele2e.com/2017/02/09/cloud-market-share-2017-amazon-microsoft-ibm-google/
