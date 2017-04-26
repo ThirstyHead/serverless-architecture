@@ -9,3 +9,6 @@ https://techcrunch.com/2015/11/24/aws-lamda-makes-serverless-applications-a-real
 
 getting started with lambda
 https://medium.com/@tombray/getting-started-with-aws-lambda-node-js-904bc0bfb83
+
+intro to openwhisk
+https://thenewstack.io/openwhisk-open-source-serverless-computing-platform/
