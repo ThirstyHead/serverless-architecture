@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Practical Examples of Serverless Architecture</title>
+    <link rel="stylesheet" href="bower_components/talk-o-vision/talk-o-vision.css">
+    <style>
+      .title-slide{
+        background: url('slides/title/img/serverless.png') no-repeat center center;
+        background-size: contain;
+      }
+
+      .banner {
+        background-color: black;
+        opacity: 0.7;
+        width: 100%;
+      }
+
+      .banner-title {
+        font-size: 1em;
+        text-align: left;
+        padding: 0.5em;
+        padding-left: 20%;
+        padding-right: 20%;
+      }
+
+      .banner-title h1 {
+        font-size: 1.5em;
+        text-transform: none;
+        font-weight: bold;
+      }
+
+      .banner-title h2 {
+        font-size: 1em;
+        text-transform: none;
+        font-style: italic;
+      }
+
+      .banner-bio {
+        font-size: 0.5em;
+        text-align: right;
+        padding-right: 20%;
+        padding-bottom: 1em;
+      }
+
+      .banner-bio a{
+        color: white;
+      }
+
+      p{
+        width: 75%;
+        text-align: center;
+        padding-left: 12%;
+      }
+
+      .full-height{
+        height: 100vh;
+        /*width: 100vw;*/
+      }
+
+      .full-width{
+        /*height: 100vh;*/
+        width: 100vw;
+      }
+
+      .partial-height{
+        height: 75%;
+        max-height: 75%;
+      }
+
+      .half-img{
+        max-width: 75%;
+        margin-top: 1rem;
+      }
+
+      .top-margin{
+        margin-top: 1rem;
+      }
+
+      .section-title{
+        position: relative;
+        top: 50%;
+        transform: perspective(1px) translateY(-50%);
+      }
+
+      .sub-title{
+        margin: 0;
+        margin-top: -2rem;
+      }
+
+      table th, table td {
+          text-align: left;
+          padding: 0.2em 0.5em 0.2em 0.5em;
+          /*border-bottom: 1px solid;*/
+      }
+      table {
+          margin: auto;
+          padding-left: 20%;
+          border-collapse: collapse;
+          border-spacing: 0;
+      }
+
+      ol{
+        width: 75%;
+      }
+
+      .global-background {
+        background: url('slides/global/img/global.jpg') no-repeat center center;
+        background-size: contain;
+      }
+
+      .bg-white li{
+        color: black;
+      }
+
+      .shh-background {
+        background: url('slides/shh/img/shh.jpg') no-repeat center center;
+        background-size: contain;
+      }
+
+    </style>
+
+
+
+  </head>
+  <body>
+    <ol class="slideshow">
+      <li class="title-slide">
+          <div class="banner">
+            <div class="banner-title">
+              <h1>Practical Examples of Serverless Architecture</h1>
+            </div>
+            <div class="banner-bio">
+              Scott Davis <br>
+              <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
+              <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
+            </div>
+          </div>
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/bio/img/scott-davis-bio.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-wiki.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/saas/img/saas-wiki.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/saas/img/saas-wiki-2.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/saas/img/cloud-services.gif"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/paas/img/paas-wiki.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/paas/img/paas-wiki-types.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/aws/img/aws-wiki.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/aws/img/aws-wiki-history.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/aws/img/aws-wiki-history-2.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/aws/img/aws-wiki-profitability.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/aws/img/aws-marketshare.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li>
+        <h2>What have we <span class="highlight">learned</span>?</h2>
+
+        <ul>
+          <li>Serverless === Function as a Service (FaaS)</li>
+          <li>SaaS === Software as a Service (GMail)</li>
+          <li>PaaS === Platform as a Service (AWS)</li>
+          <li>IaaS === Infrastructure as a Service (AWS)</li>
+        </ul>
+      </li>
+
+      <li>
+        &nbsp;
+      </li>
+
+
+
+
+
+
+
+
+
+      <li>
+        <h2>What is <span class="highlight">serverless</span>?</h2>
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-wiki.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/aws/img/aws-wiki-ec2-vs-lambda.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li>
+        <img src="slides/auth0/img/auth0-what-is-serverless.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/auth0/img/auth0-what-is-serverless-2.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/auth0/img/auth0-what-is-serverless-3.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/auth0/img/auth0-what-is-serverless-4.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/aws-lambda/img/aws-lambda-wiki-2.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li>
+        &nbsp;
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+      <li>
+        <h2>Amazon <span class="highlight">Lambda</span></h2>
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/aws-lambda/img/aws-lambda-wiki.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/aws-lambda/img/tc-lambda-short-lived.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/getting-started-with-lambda/img/getting-started-with-lambda.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/getting-started-with-lambda/img/getting-started-with-lambda-2.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/getting-started-with-lambda/img/getting-started-with-lambda-3.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/getting-started-with-lambda/img/getting-started-with-lambda-4.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <!-- <li class="bg-white">
+        <img src="slides/getting-started-with-lambda/img/getting-started-with-lambda-5.png"
+             alt=""
+             class="full-height">
+      </li> -->
+
+      <li class="bg-white">
+        <img src="slides/getting-started-with-lambda/img/getting-started-with-lambda-6.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <a href="https://smile.amazon.com/Amazon-Echo-Bluetooth-Speaker-with-WiFi-Alexa/dp/B00X4WHP5E/ref=sr_1_1?ie=UTF8&qid=1484605178&sr=8-1&keywords=echo">
+          <img src="slides/amazon-echo/img/amazon-echo-home.png"
+               alt=""
+               class="full-height"></a>
+      </li>
+
+      <li class="bg-white">
+        <p><a href="https://github.com/alexa/skill-sample-nodejs-fact">https://github.com/alexa/skill-sample-nodejs-fact</a></p>
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+          <img src="slides/alexa-github/img/alexa-github.png"
+               alt=""
+               class="full-width"></a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+          <img src="slides/alexa-github/img/alexa-github-readme.png"
+               alt=""
+               class="full-height"></a>
+      </li>
+
+      <!-- Steps -->
+      <li class="bg-white">
+        <h2>Step 1.</h2>
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+          <img src="slides/alexa-github/img/alexa-github-step01.png"
+               alt=""
+               class="full-height"></a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+          <img src="slides/alexa-github/img/alexa-github-step01b.png"
+               alt=""
+               class="full-height"></a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+          <img src="slides/alexa-github/img/alexa-github-step01c.png"
+               alt=""
+               class="full-height"></a>
+      </li>
+
+      <li class="bg-white">
+        <h2>Step 2.</h2>
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+          <img src="slides/alexa-github/img/alexa-github-step02.png"
+               alt=""
+               class="full-height"></a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+          <img src="slides/alexa-github/img/alexa-github-step02b.png"
+               alt=""
+               class="full-height"></a>
+      </li>
+
+      <li class="bg-white">
+        <h2>Step 3.</h2>
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+          <img src="slides/alexa-github/img/alexa-github-step03.png"
+               alt=""
+               class="full-height"></a>
+      </li>
+
+      <li class="bg-white">
+        <h2>Step 4.</h2>
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+          <img src="slides/alexa-github/img/alexa-github-step04.png"
+               alt=""
+               class="full-height"></a>
+      </li>
+
+      <li class="bg-white">
+        <a href="https://github.com/alexa/skill-sample-nodejs-fact">
+          <img src="slides/alexa-github/img/alexa-github-step04b.png"
+               alt=""
+               class="full-height"></a>
+      </li>
+      <!-- Steps -->
+
+      <li>
+        &nbsp;
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li>
+        <h2>Apache <span class="highlight">OpenWhisk</span></h2>
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/openwhisk-home.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/openwhisk-home-2.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/intro-to-openwhisk.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/intro-to-openwhisk-2.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/intro-to-openwhisk-3.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/intro-to-openwhisk-4.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/openwhisk-cli.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/openwhisk-example-1.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/openwhisk-example-2.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/openwhisk-example-3.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/openwhisk-example-4.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li>
+        &nbsp;
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li>
+        <h2><span class="highlight">Serverless</span> Framework</h2>
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-framework-wiki.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-home.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-example.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-example-2.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-example-3.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-example-4.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-example-5.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-example-6.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-example-7.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li>
+        &nbsp;
+      </li>
+
+
+
+
+
+
+
+
+
+
+      <li>
+        <h2><span class="highlight">Conclusion</span></h2>
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-wiki.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/aws-lambda/img/aws-lambda-home.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/openwhisk/img/openwhisk-home.png"
+             alt=""
+             class="full-width">
+      </li>
+
+      <li class="bg-white">
+        <img src="slides/serverless/img/serverless-home.png"
+             alt=""
+             class="full-height">
+      </li>
+
+      <li class="title-slide">
+          <div class="banner">
+            <div class="banner-title">
+              <h1>Practical Examples of Serverless Architecture</h1>
+            </div>
+            <div class="banner-bio">
+              Scott Davis <br>
+              <a href="mailto:sdavis@thoughtworks.com">sdavis@thoughtworks.com</a> <br>
+              <a href="https://twitter.com/scottdavis99?lang=en">@scottdavis99</a>
+            </div>
+          </div>
+      </li>
+
+
+
+
+    </ol>
+
+
+    <script src="bower_components/talk-o-vision/talk-o-vision.js"></script>
+  </body>
+</html>

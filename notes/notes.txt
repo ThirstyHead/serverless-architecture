@@ -1,3 +1,9 @@
+We are in an event-driven world
+Think streams, not discrete calls
+
+
+
+
 https://martinfowler.com/articles/serverless.html
 https://serverless.com/framework/
 
