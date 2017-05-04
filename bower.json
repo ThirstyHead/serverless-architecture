@@ -1,6 +1,6 @@
 {
   "name": "serverless-architecture",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/ThirstyHead/serverless-architecture",
   "authors": [
     "Scott Davis <scott@thirstyhead.com>"
@@ -14,5 +14,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "talk-o-vision": "thirstyhead/talk-o-vision#^0.3.1"
+  }
 }
